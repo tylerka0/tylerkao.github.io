@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tyler Kao | Quantitative Research</title>
+    <title>Tyler Kao | Research Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        html { scroll-behavior: smooth; } /* Simple smooth scroll backup */
         body { font-family: 'Inter', sans-serif; background-color: #f8f8f8; color: #111; cursor: none; }
         .serif { font-family: 'Playfair Display', serif; }
         
-        /* Single Magnetic Dot Cursor */
         #cursor {
             position: fixed;
             width: 8px;
@@ -22,16 +22,14 @@
             transition: transform 0.1s ease-out;
         }
 
-        /* Roger Haus-style Content Block */
         .content-card {
             background: white;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            border: 1px solid transparent;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid #eee;
         }
         .content-card:hover {
-            border-color: #eee;
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
         }
     </style>
 </head>
@@ -39,72 +37,103 @@
 
     <div id="cursor"></div>
 
-    <nav class="p-10 flex justify-between items-center fixed top-0 w-full z-50 mix-blend-difference text-white">
-        <div class="font-bold tracking-tighter text-sm uppercase">Kao // Portfolio</div>
-        <div class="space-x-10 text-[10px] tracking-widest uppercase font-bold">
-            <a href="#work" class="hover:opacity-50 transition-opacity">Research</a>
-            <a href="mailto:your-email@example.com" class="hover:opacity-50 transition-opacity">Contact</a>
+    <nav class="p-8 flex justify-between items-center fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+        <div class="font-bold tracking-tighter text-sm uppercase">Tyler Kao // Research Portfolio</div>
+        <div class="hidden md:flex space-x-10 text-[10px] tracking-widest uppercase font-bold">
+            <a href="#work" class="nav-link">Research</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
     </nav>
 
     <section class="h-screen flex flex-col justify-center px-10 md:px-32">
         <h1 class="text-[9vw] md:text-[7vw] serif leading-[0.85] tracking-tight">
-            Data-Driven <br> <span class="italic text-gray-400">Discovery.</span>
+            Quantitative <br> <span class="italic text-gray-400">Economics.</span>
         </h1>
         <p class="mt-10 text-lg md:text-xl text-gray-500 max-w-xl font-light leading-relaxed">
-            Specializing in econometric modeling and computational social science. 
-            Built with Quarto, R, and Python.
+            Investigating market structures and banking scale through computational modeling. 
+            Leveraging R, Quarto, and Python for reproducible social science.
         </p>
+        <div class="mt-12">
+            <a href="#work" class="nav-link inline-block border-b-2 border-black pb-2 text-xs font-bold uppercase tracking-widest hover:text-gray-400 hover:border-gray-400 transition-all">
+                Explore Investigations ↓
+            </a>
+        </div>
     </section>
 
-    <section id="work" class="px-10 md:px-32 py-20 bg-white">
-        <div class="max-w-5xl">
-            <h2 class="text-[10px] uppercase tracking-[0.4em] text-gray-400 mb-16">— Featured Quarto Project</h2>
-            
-            <div class="content-card p-10 md:p-16">
-                <div class="flex flex-col md:flex-row gap-12 items-center">
-                    <div class="flex-1">
-                        <span class="text-[10px] font-mono text-blue-500 font-bold tracking-widest uppercase">Quarto Interactive Report</span>
-                        <h3 class="serif text-4xl md:text-5xl mt-4 mb-6 leading-tight">Your Paper Title Here</h3>
-                        <p class="text-gray-600 text-lg font-light leading-relaxed mb-10">
-                            A comprehensive study rendered directly from RStudio. This project showcases data cleaning pipelines, causal inference models, and interactive visualizations.
-                        </p>
-                        
-                        <a href="research_paper.html" class="inline-block bg-black text-white px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-gray-800 transition-all">
-                            Open Interactive Paper
-                        </a>
-                    </div>
+    <section id="work" class="px-10 md:px-32 py-32 bg-white">
+        <h2 class="text-[10px] uppercase tracking-[0.4em] text-gray-400 mb-16">— Research Library</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="content-card p-10 flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-mono text-blue-500 font-bold tracking-widest uppercase">Quarto / FDIC Data</span>
+                    <h3 class="serif text-3xl mt-4 mb-6 leading-tight">Economies of Scale in California Banks</h3>
+                    <p class="text-gray-600 font-light leading-relaxed mb-10">
+                        A study on asset-dependent models and firm utility. Rendered from Quarto with integrated R-code blocks.
+                    </p>
                 </div>
+                <a href="fdic-economies-of-scale.html" class="inline-block bg-black text-white text-center py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-gray-700 transition-all">
+                    Open Interactive Paper
+                </a>
+            </div>
+
+            <div class="content-card p-10 flex flex-col justify-center items-center border-dashed border-2 border-gray-200 bg-gray-50/50">
+                <span class="text-gray-300 font-bold text-xs uppercase tracking-widest italic serif text-center">
+                    Next Research Project <br> Incoming
+                </span>
             </div>
         </div>
     </section>
 
-    <footer class="p-20 text-center border-t border-gray-100 bg-white">
-        <p class="text-[10px] uppercase tracking-widest text-gray-400">© 2026 Tyler Kao • Quantitative Researcher</p>
-    </footer>
+    <section id="contact" class="px-10 md:px-32 py-32 bg-[#111] text-white">
+        <h2 class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-16">— Get in Touch</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div>
+                <h4 class="serif text-2xl mb-4 italic">Academic</h4>
+                <a href="mailto:your-email@ucdavis.edu" class="text-gray-400 hover:text-white transition-colors text-sm">your-email@ucdavis.edu</a>
+            </div>
+            <div>
+                <h4 class="serif text-2xl mb-4 italic">Code & Data</h4>
+                <a href="https://github.com/tylerka0" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm block">GitHub Profile</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm block mt-2">LinkedIn</a>
+            </div>
+            <div>
+                <h4 class="serif text-2xl mb-4 italic">Location</h4>
+                <p class="text-gray-400 text-sm">University of California, Davis</p>
+            </div>
+        </div>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+
     <script>
-        const cursor = document.getElementById('cursor');
-        
-        // Single Smooth Mouse Follower
-        document.addEventListener('mousemove', (e) => {
-            gsap.to(cursor, {
-                x: e.clientX,
-                y: e.clientY,
-                duration: 0.1,
-                ease: "power2.out"
+        // 1. Lenis Smooth Scroll (The "Roger Haus" smooth movement)
+        const lenis = new Lenis();
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        // 2. Animate to Section (Smooth Glide)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                lenis.scrollTo(this.getAttribute('href'), {
+                    duration: 1.5,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                });
             });
         });
 
-        // Hover Effect: Dot expands slightly on links
+        // 3. Cursor Logic
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
+        });
+
         document.querySelectorAll('a, .content-card').forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                gsap.to(cursor, { scale: 3, backgroundColor: "rgba(0,0,0,0.1)", duration: 0.3 });
-            });
-            link.addEventListener('mouseleave', () => {
-                gsap.to(cursor, { scale: 1, backgroundColor: "#000", duration: 0.3 });
-            });
+            link.addEventListener('mouseenter', () => gsap.to(cursor, { scale: 4, backgroundColor: "rgba(0,0,0,0.1)" }));
+            link.addEventListener('mouseleave', () => gsap.to(cursor, { scale: 1, backgroundColor: "#000" }));
         });
     </script>
 </body>
