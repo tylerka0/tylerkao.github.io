@@ -3,99 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Aesthetic & Motion</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Tyler Kao | Data Science & Economics Research</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fafafa; color: #111; overflow-x: hidden; }
-        .canvas-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f0f0f0 100%); }
-        .reveal-text { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
-        .work-item img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
-        .work-item:hover img { transform: scale(1.05); }
+        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; color: #1a1a1a; cursor: none; }
+        .serif { font-family: 'Playfair Display', serif; }
+        /* Custom Magnetic Cursor */
+        #cursor {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999;
+            transition: transform 0.1s ease-out;
+        }
+        #cursor-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #1a1a1a;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 998;
+            transition: transform 0.2s ease-out;
+        }
+        .line-reveal { overflow: hidden; }
     </style>
 </head>
 <body>
 
-    <div class="canvas-bg"></div>
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
 
     <nav class="fixed top-0 w-full p-8 flex justify-between items-center z-50 mix-blend-difference text-white">
-        <div class="text-xl font-bold tracking-tighter">STUDIO.</div>
-        <div class="space-x-8 uppercase text-xs tracking-widest font-medium">
-            <a href="#" class="hover:opacity-50 transition-opacity">Work</a>
-            <a href="#" class="hover:opacity-50 transition-opacity">About</a>
-            <a href="#" class="hover:opacity-50 transition-opacity">Contact</a>
+        <div class="font-bold tracking-tighter text-lg uppercase">Kao.Research</div>
+        <div class="hidden md:flex space-x-12 text-[10px] tracking-[0.2em] uppercase font-semibold">
+            <a href="#research" class="hover:text-gray-400 transition-colors">Papers</a>
+            <a href="#data" class="hover:text-gray-400 transition-colors">Data Systems</a>
+            <a href="#about" class="hover:text-gray-400 transition-colors">About</a>
         </div>
     </nav>
 
-    <section class="h-screen flex flex-col justify-center px-10 md:px-20 lg:px-40">
-        <h1 class="reveal-text text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-none mb-4">
-            CREATIVE <br> <span class="text-gray-400">VISIONARY</span>
-        </h1>
-        <p class="text-lg max-w-md mt-6 text-gray-600 leading-relaxed">
-            Crafting digital experiences where surrealism meets professional minimalism.
+    <section class="h-screen flex flex-col justify-center px-10 md:px-24">
+        <div class="line-reveal">
+            <h1 class="text-[12vw] md:text-[8vw] leading-[0.9] serif italic tracking-tight opacity-0 hero-text">
+                Quantitative <br> <span class="not-italic serif font-normal text-gray-400">Analysis.</span>
+            </h1>
+        </div>
+        <p class="text-lg md:text-xl max-w-xl mt-8 font-light leading-relaxed text-gray-500 opacity-0 hero-sub">
+            Bridging econometric theory and data science to solve complex social-economic challenges. Candidate for Research Lab placement.
         </p>
     </section>
 
-    <section class="px-10 md:px-20 lg:px-40 py-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
-            <div class="work-item group cursor-pointer overflow-hidden">
-                <div class="aspect-[4/5] bg-gray-200 overflow-hidden mb-6">
-                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=800&q=80" alt="Work" class="w-full h-full object-cover grayscale group-hover:grayscale-0">
+    <section id="research" class="px-10 md:px-24 py-20 bg-white">
+        <h2 class="text-xs uppercase tracking-widest text-gray-400 mb-20">— Selected Research</h2>
+        
+        <div class="space-y-32">
+            <div class="grid md:grid-cols-2 gap-16 group">
+                <div class="overflow-hidden bg-gray-100 aspect-video flex items-center justify-center">
+                    <span class="text-xs uppercase tracking-tighter text-gray-300 group-hover:scale-110 transition-transform duration-700 font-bold text-4xl">Econometrics_01.csv</span>
                 </div>
-                <h3 class="text-2xl font-bold uppercase tracking-tighter">Hypnagogia</h3>
-                <p class="text-gray-400 text-sm uppercase tracking-widest mt-1">AI Illustration • 2024</p>
+                <div class="flex flex-col justify-center">
+                    <h3 class="serif text-4xl mb-4">Macro-Level Impact of Tech Inflation</h3>
+                    <p class="text-gray-600 mb-6 font-light">An analysis of consumer price indices across emerging markets using Python-based regression models and STATA.</p>
+                    <a href="#" class="text-xs uppercase tracking-widest font-bold border-b border-black pb-1 w-fit">View Abstract</a>
+                </div>
             </div>
 
-            <div class="work-item group cursor-pointer overflow-hidden md:mt-40">
-                <div class="aspect-[4/5] bg-gray-200 overflow-hidden mb-6">
-                    <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=800&q=80" alt="Work" class="w-full h-full object-cover grayscale group-hover:grayscale-0">
+            <div class="grid md:grid-cols-2 gap-16 group">
+                <div class="flex flex-col justify-center order-2 md:order-1">
+                    <h3 class="serif text-4xl mb-4">Predictive Labor Modeling</h3>
+                    <p class="text-gray-600 mb-6 font-light">Leveraging Machine Learning to predict post-pandemic labor shifts in the logistics sector.</p>
+                    <a href="#" class="text-xs uppercase tracking-widest font-bold border-b border-black pb-1 w-fit">Read Case Study</a>
                 </div>
-                <h3 class="text-2xl font-bold uppercase tracking-tighter">Surreal Flow</h3>
-                <p class="text-gray-400 text-sm uppercase tracking-widest mt-1">Digital Art • 2023</p>
+                <div class="overflow-hidden bg-gray-100 aspect-video flex items-center justify-center order-1 md:order-2">
+                    <span class="text-xs uppercase tracking-tighter text-gray-300 group-hover:scale-110 transition-transform duration-700 font-bold text-4xl">Predictive_ML.py</span>
+                </div>
             </div>
         </div>
     </section>
-
-    <footer class="p-20 text-center border-t border-gray-200">
-        <p class="text-sm text-gray-400">© 2026 Your Name. Build with Vibe.</p>
-    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
 
     <script>
-        // 1. Initialize Smooth Scroll (Lenis)
-        const lenis = new Lenis()
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-        requestAnimationFrame(raf)
+        // 1. Smooth Scroll
+        const lenis = new Lenis();
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
 
-        // 2. GSAP Entrance Animations
-        gsap.from(".reveal-text", {
-            y: 100,
-            opacity: 0,
-            duration: 1.5,
-            ease: "power4.out",
-            stagger: 0.2
+        // 2. Magnetic Cursor Logic
+        const cursor = document.getElementById('cursor');
+        const follower = document.getElementById('cursor-follower');
+        
+        document.addEventListener('mousemove', (e) => {
+            gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0 });
+            gsap.to(follower, { x: e.clientX - 14, y: e.clientY - 14, duration: 0.3 });
         });
 
-        // 3. Scroll Reveal for Project Items
-        gsap.utils.toArray(".work-item").forEach(item => {
-            gsap.from(item, {
-                scrollTrigger: {
-                    trigger: item,
-                    start: "top bottom-=100",
-                    toggleActions: "play none none reverse"
-                },
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                ease: "power3.out"
+        // Hover Effect for links
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                gsap.to(follower, { scale: 2, backgroundColor: "rgba(0,0,0,0.05)", duration: 0.3 });
+            });
+            el.addEventListener('mouseleave', () => {
+                gsap.to(follower, { scale: 1, backgroundColor: "transparent", duration: 0.3 });
             });
         });
+
+        // 3. Entrance Animations
+        const tl = gsap.timeline();
+        tl.to(".hero-text", { opacity: 1, y: -20, duration: 1.2, ease: "power4.out", delay: 0.5 })
+          .to(".hero-sub", { opacity: 1, y: -10, duration: 1, ease: "power3.out" }, "-=0.8");
     </script>
 </body>
 </html>
