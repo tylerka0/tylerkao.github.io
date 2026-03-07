@@ -3,80 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tyler Kao | Quantitative Research & Economics</title>
+    <title>Tyler Kao | Quantitative Research</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; color: #1a1a1a; cursor: none; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8f8f8; color: #111; cursor: none; }
         .serif { font-family: 'Playfair Display', serif; }
-        /* Magnetic Cursor Styles */
-        #cursor { position: fixed; width: 10px; height: 10px; background: #000; border-radius: 50%; pointer-events: none; z-index: 999; }
-        #cursor-follower { position: fixed; width: 35px; height: 35px; border: 1px solid #000; border-radius: 50%; pointer-events: none; z-index: 998; transition: transform 0.15s ease-out; }
-        .project-card:hover img { transform: scale(1.02); }
+        
+        /* Single Magnetic Dot Cursor */
+        #cursor {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: #000;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 999;
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Roger Haus-style Content Block */
+        .content-card {
+            background: white;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid transparent;
+        }
+        .content-card:hover {
+            border-color: #eee;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+        }
     </style>
 </head>
 <body>
 
     <div id="cursor"></div>
-    <div id="cursor-follower"></div>
 
-    <nav class="fixed top-0 w-full p-8 flex justify-between items-center z-50 mix-blend-difference text-white">
-        <div class="font-bold tracking-tighter text-lg uppercase">Kao.Research</div>
-        <div class="hidden md:flex space-x-12 text-[10px] tracking-[0.2em] uppercase font-semibold">
-            <a href="#research">Projects</a>
-            <a href="#about">About</a>
-            <a href="mailto:your@email.com">Contact</a>
+    <nav class="p-10 flex justify-between items-center fixed top-0 w-full z-50 mix-blend-difference text-white">
+        <div class="font-bold tracking-tighter text-sm uppercase">Kao // Portfolio</div>
+        <div class="space-x-10 text-[10px] tracking-widest uppercase font-bold">
+            <a href="#work" class="hover:opacity-50 transition-opacity">Research</a>
+            <a href="mailto:your-email@example.com" class="hover:opacity-50 transition-opacity">Contact</a>
         </div>
     </nav>
 
-    <section class="h-screen flex flex-col justify-center px-10 md:px-24">
-        <h1 class="text-[10vw] md:text-[7vw] leading-[0.9] serif italic tracking-tight opacity-0 hero-text">
-            Quantitative <br> <span class="not-italic text-gray-400">Analysis.</span>
+    <section class="h-screen flex flex-col justify-center px-10 md:px-32">
+        <h1 class="text-[9vw] md:text-[7vw] serif leading-[0.85] tracking-tight">
+            Data-Driven <br> <span class="italic text-gray-400">Discovery.</span>
         </h1>
-        <p class="text-lg md:text-xl max-w-xl mt-8 font-light leading-relaxed text-gray-500 opacity-0 hero-sub">
-            Bridging econometric theory and data science to solve complex social challenges. Candidate for Research Lab placement.
+        <p class="mt-10 text-lg md:text-xl text-gray-500 max-w-xl font-light leading-relaxed">
+            Specializing in econometric modeling and computational social science. 
+            Built with Quarto, R, and Python.
         </p>
     </section>
 
-    <section id="research" class="px-10 md:px-24 py-32 border-t border-gray-100 bg-white">
-        <h2 class="text-[10px] uppercase tracking-[0.3em] text-gray-400 mb-20">— Selected Research</h2>
-        
-        <div class="space-y-40">
-            <div class="grid md:grid-cols-2 gap-16 items-center group project-card">
-                <div class="overflow-hidden bg-gray-50 aspect-[16/9] flex items-center justify-center border border-gray-100">
-                    <span class="serif italic text-4xl text-gray-200 group-hover:text-gray-400 transition-colors duration-500">econometrics_v1.py</span>
-                </div>
-                <div>
-                    <h3 class="serif text-4xl mb-4">Market Volatility in Tech Hubs</h3>
-                    <p class="text-gray-600 mb-8 font-light leading-relaxed">A deep dive into price index variance using R and Python. Developed a predictive model for emerging market inflation.</p>
-                    <a href="#" class="text-xs font-bold uppercase border-b-2 border-black pb-1 hover:text-gray-400 hover:border-gray-400 transition-all">View Full Paper</a>
+    <section id="work" class="px-10 md:px-32 py-20 bg-white">
+        <div class="max-w-5xl">
+            <h2 class="text-[10px] uppercase tracking-[0.4em] text-gray-400 mb-16">— Featured Quarto Project</h2>
+            
+            <div class="content-card p-10 md:p-16">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="flex-1">
+                        <span class="text-[10px] font-mono text-blue-500 font-bold tracking-widest uppercase">Quarto Interactive Report</span>
+                        <h3 class="serif text-4xl md:text-5xl mt-4 mb-6 leading-tight">Your Paper Title Here</h3>
+                        <p class="text-gray-600 text-lg font-light leading-relaxed mb-10">
+                            A comprehensive study rendered directly from RStudio. This project showcases data cleaning pipelines, causal inference models, and interactive visualizations.
+                        </p>
+                        
+                        <a href="research_paper.html" class="inline-block bg-black text-white px-8 py-4 text-[10px] uppercase tracking-[0.2em] font-bold hover:bg-gray-800 transition-all">
+                            Open Interactive Paper
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <footer class="p-20 text-center border-t border-gray-100 bg-white">
+        <p class="text-[10px] uppercase tracking-widest text-gray-400">© 2026 Tyler Kao • Quantitative Researcher</p>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
-
     <script>
-        // 1. Smooth Scroll (Lenis)
-        const lenis = new Lenis();
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-        requestAnimationFrame(raf);
-
-        // 2. Magnetic Cursor Logic
         const cursor = document.getElementById('cursor');
-        const follower = document.getElementById('cursor-follower');
         
+        // Single Smooth Mouse Follower
         document.addEventListener('mousemove', (e) => {
-            gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0 });
-            gsap.to(follower, { x: e.clientX - 12, y: e.clientY - 12, duration: 0.3 });
+            gsap.to(cursor, {
+                x: e.clientX,
+                y: e.clientY,
+                duration: 0.1,
+                ease: "power2.out"
+            });
         });
 
-        // 3. Entrance Animations
-        const tl = gsap.timeline();
-        tl.to(".hero-text", { opacity: 1, y: -20, duration: 1.5, ease: "power4.out", delay: 0.5 })
-          .to(".hero-sub", { opacity: 1, y: -10, duration: 1, ease: "power3.out" }, "-=1");
+        // Hover Effect: Dot expands slightly on links
+        document.querySelectorAll('a, .content-card').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                gsap.to(cursor, { scale: 3, backgroundColor: "rgba(0,0,0,0.1)", duration: 0.3 });
+            });
+            link.addEventListener('mouseleave', () => {
+                gsap.to(cursor, { scale: 1, backgroundColor: "#000", duration: 0.3 });
+            });
+        });
     </script>
 </body>
 </html>
